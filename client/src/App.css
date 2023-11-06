@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Acme:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Content:wght@400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.25rem; /* You can adjust the width to your preference */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
