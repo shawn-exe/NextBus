@@ -2,11 +2,7 @@ import React from 'react'
 import Logo from '../assets/logo.svg'
 import Cancel from '../assets/cancel.svg'
 import { Link } from 'react-router-dom';
-
-
 function logincomponent(props) {
-
-
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
       <div className='w-full flex flex-row justify-center fixed gap-1'>
@@ -58,7 +54,6 @@ function logincomponent(props) {
                             Login
                           </button>
                           </Link>     
-
                   </div>
                 </div>
               </form>
@@ -90,8 +85,7 @@ function logincomponent(props) {
           </div>   
           <div className='cursor-pointer'>
             <img onClick={props.onClick} src={Cancel} alt="" />
-          </div>
-        
+          </div>    
           </div>
     </div>
   )
