@@ -1,8 +1,8 @@
 // models/Role.js
 const { Sequelize, DataTypes } = require('sequelize');
-const db = require('../index'); // Assuming your Sequelize instance is in the index.js file
+// Assuming your Sequelize instance is in the index.js file
 
-const Role = db.define('Role', {
+const Role = Sequelize.define('Role', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

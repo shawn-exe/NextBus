@@ -11,23 +11,15 @@ const Role =require('./models/Role')
 const Users =require('./models/Users')
 const app = express();
 const port = process.env.PORT || 3001;
-
+const sequelize=require('./db')
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Sequelize setup
-const db = new Sequelize({
-  dialect: 'mysql',
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
 
 // Test the connection
-db.authenticate()
+sequelize.authenticate()
   .then(() => console.log('Database connection successful'))
   .catch((err) => console.error('Error connecting to the database:', err));
 
