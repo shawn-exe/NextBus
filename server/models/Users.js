@@ -1,7 +1,8 @@
-import sequelize from '../db';
-import { DataTypes } from "sequelize";
-import useBcrypt from "sequelize-bcrypt"
-const db = require('../index'); // Assuming your Sequelize instance is in the index.js file
+const sequelize =require("../db");
+const DataTypes =require("sequelize");
+const useBcrypt =require("sequelize-bcrypt");
+const Role =require('./Role')
+// Assuming your Sequelize instance is in the index.js file
 
 const User = sequelize.define('User', {
   username: {
@@ -9,10 +10,12 @@ const User = sequelize.define('User', {
     primaryKey: true, // Set 'username' as the primary key
     allowNull: false,
   },
+
   password: {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  
   roleId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -22,11 +25,5 @@ const User = sequelize.define('User', {
     },
   },
 });
-
-// Define the foreign key relationship
-User.belongsTo(db.models.Role, { foreignKey: 'roleId' });
-
-// Insert values into 'User' table
-
 User.sync();
 module.exports = User;

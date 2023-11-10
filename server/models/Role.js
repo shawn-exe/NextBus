@@ -1,8 +1,9 @@
-// models/Role.js
-const { Sequelize, DataTypes } = require('sequelize');
+const sequelize =require("../db");
+const DataTypes =require("sequelize");
+const useBcrypt =require("sequelize-bcrypt");
 // Assuming your Sequelize instance is in the index.js file
 
-const Role = Sequelize.define('Role', {
+const Role = sequelize.define('Role', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
