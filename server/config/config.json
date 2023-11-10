@@ -3,21 +3,21 @@
     "username": "root",
     "password": "ash@23923",
     "database": "nextbus",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password":  "ash@23923",
     "database": "nextbus",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password":  "ash@23923",
     "database": "nextbus",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   }
 }

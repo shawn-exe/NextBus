@@ -1,14 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const sequelize = require('sequelize');
 const mysql2 = require('mysql2');
 const { Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { sequelizeBcrypt } = require('sequelize-bcrypt');
 require('dotenv').config();
-
+const Role =require('./models/Role')
+const Users =require('./models/Users')
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sequelize setup
-const db = new sequelize({
+const db = new Sequelize({
   dialect: 'mysql',
   host: process.env.DB_HOST,
   username: process.env.DB_USER,

@@ -6,7 +6,6 @@ const Role = db.define('Role', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true,
   },
   roleName: {
     type: DataTypes.STRING,
@@ -18,7 +17,7 @@ const Role = db.define('Role', {
 Role.sync();
 Role.create({
     id :1,
-    roleName: 'Admin',
+    roleName: 'user',
   })
     .then((role) => {
       console.log('Role created:', role.toJSON());
