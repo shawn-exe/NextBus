@@ -15,14 +15,4 @@ const Role = db.define('Role', {
 });
 
 Role.sync();
-Role.create({
-    id :1,
-    roleName: 'user',
-  })
-    .then((role) => {
-      console.log('Role created:', role.toJSON());
-    })
-    .catch((error) => {
-      console.error('Error creating role:', error);
-    });
 module.exports = Role;
