@@ -9,7 +9,6 @@ function App() {
   <Route path="/" element={<Home />} />
   <Route path="/mainpage" element={<Mainpage />} />
 </Routes>
-
       </BrowserRouter>
     );
 
