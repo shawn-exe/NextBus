@@ -1,21 +1,16 @@
 const User = require('../models/Users');
- // Adjust the path accordingly
-
 const loginuser = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password } = req.body; 
   try {
-    const user = await User.findOne({ where: { username } });
-
+    const user = await User.findOne({ where: { username } }); 
     if (user && user.password === password) {
-      // Authentication successful
-      return res.status(200).json({ message: 'Success' });
+      return res.status(200).json({ status: 'Success', message: 'Login successful' });
     } else {
-      // Authentication failed
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ status: 'Failure', message: 'Invalid credentials' });
     }
-  } catch (error) { 
-    return res.status(500).json({ message: 'Internal server error' });
+  } catch (error) {
+    return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
   }
 };
-
 module.exports = { loginuser };
+

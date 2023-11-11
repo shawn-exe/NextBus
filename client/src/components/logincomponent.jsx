@@ -10,20 +10,23 @@ function Logincomponent(props) {
     password: '',
   }
   );
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate=useNavigate();
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
-    .then(res =>{
-      if(res.data.message === "Success"){
-        navigate('/mainpage')
-      }else
-      {
-        alert("Invalid Credentials")
-      }
+      .then(res => {
+        if (res.data.status === 'Success') {
+          navigate('/mainpage');
+        } else {
+          setErrorMessage('Invalid Credentials. Please try again.');
+        }
       })
-    .then(err => console.log(err));
-  }
+      .catch(err => {
+        console.log(err);
+        setErrorMessage('An error occurred. Please try again.');
+      });
+  };
 
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
@@ -33,6 +36,11 @@ function Logincomponent(props) {
               <div className=" flex justify-center">
                <img src={Logo} alt="" />
               </div>
+              {errorMessage && (
+              <p className={`text-red-500 text-sm font-bold text-center mt-2 animate-error ${errorMessage && 'animate'}`}>
+                {errorMessage}
+              </p>
+            )}
               <h2 className="text-center text-2xl font-bold leading-tight text-black">
                 Log in to your account
               </h2>             

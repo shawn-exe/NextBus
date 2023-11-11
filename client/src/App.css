@@ -51,3 +51,24 @@ body {
 .hide-scrollbar::-webkit-scrollbar-thumb {
   background: transparent;
 }
+/* Add this to your styles */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-error {
+  animation: fadeInOut 1s ease-in-out infinite;
+}
+
+/* You can adjust the animation duration and easing function as needed */
