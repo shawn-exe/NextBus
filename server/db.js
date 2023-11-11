@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(process.env.dbname, process.env.dbuser, process.env.dbpassword, {
+const sequelize = new Sequelize("nextbus", "root", "ash@23923",{
   host: 'localhost',
   dialect: 'mysql'
 });
 
-module.exports=sequelize
+module.exports=sequelize;

@@ -1,8 +1,6 @@
 const sequelize =require("../db");
 const DataTypes =require("sequelize");
 const useBcrypt =require("sequelize-bcrypt");
-// Assuming your Sequelize instance is in the index.js file
-
 const Role = sequelize.define('Role', {
   id: {
     type: DataTypes.INTEGER,
@@ -14,6 +12,5 @@ const Role = sequelize.define('Role', {
     unique: true,
   },
 });
-
 Role.sync();
 module.exports = Role;

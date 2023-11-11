@@ -3,7 +3,6 @@ const DataTypes =require("sequelize");
 const useBcrypt =require("sequelize-bcrypt");
 const Role =require('./Role')
 // Assuming your Sequelize instance is in the index.js file
-
 const User = sequelize.define('User', {
   username: {
     type: DataTypes.STRING,
@@ -25,5 +24,8 @@ const User = sequelize.define('User', {
     },
   },
 });
+
+
+
 User.sync();
 module.exports = User;
