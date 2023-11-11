@@ -18,16 +18,15 @@ function Logincomponent(props) {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
     .then(res =>{
-      if(res.data.Status === "Success"){
+      if(res.data.message === "Success"){
         navigate('/mainpage')
-      }else
-      {
+      }
+      else if(res.data.message === "Invalid credentials")      {
         alert("Invalid Credentials")
       }
       })
     .then(err => console.log(err));
   }
-
 
 
   return (
