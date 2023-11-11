@@ -3,9 +3,9 @@ const {Users} = require('../models/Users');
 
 const loginuser = async (req, res) => {
   const { username, password } = req.body;
-
+console.log(username)
   try {
-    const user = await Users.findOne({ where: { username: username } });
+    const user = await Users.findOne({ where: { username } });
 
     if (user && user.password === password) {
       // Authentication successful

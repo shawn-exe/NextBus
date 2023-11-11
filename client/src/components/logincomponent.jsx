@@ -41,7 +41,7 @@ function Logincomponent(props) {
               <h2 className="text-center text-2xl font-bold leading-tight text-black">
                 Log in to your account
               </h2>             
-              <form action="#" method="POST" className="mt-8" onClick={handleSubmit} >
+              <form action="#" method="POST" className="mt-8" onSubmit={handleSubmit} >
                 <div className="space-y-5">
                   <div>
                     <label htmlFor="" className="text-base font-medium text-gray-900">
