@@ -13,8 +13,7 @@ const loginuser = async (req, res) => {
       // Authentication failed
       return res.status(401).json({ message: 'Invalid credentials' });
     }
-  } catch (error) {
-    console.error(error);
+  } catch (error) { 
     return res.status(500).json({ message: 'Internal server error' });
   }
 };

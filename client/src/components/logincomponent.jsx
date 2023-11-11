@@ -5,29 +5,25 @@ import Cancel from '../assets/cancel.svg'
 import { useState } from 'react'
 import axios from 'axios'
 function Logincomponent(props) {
-
   const [values,setValues]=useState({
     username: '',
     password: '',
   }
   );
-
   const navigate=useNavigate();
-
   const handleSubmit=(e)=>{
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
     .then(res =>{
       if(res.data.message === "Success"){
         navigate('/mainpage')
-      }
-      else if(res.data.message === "Invalid credentials")      {
+      }else
+      {
         alert("Invalid Credentials")
       }
       })
     .then(err => console.log(err));
   }
-
 
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
