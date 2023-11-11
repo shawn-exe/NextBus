@@ -2,10 +2,10 @@ const {Users} = require('../models/Users');
  // Adjust the path accordingly
 
 const loginuser = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
-    const user = await Users.findOne({ where: { email } });
+    const user = await Users.findOne({ where: { username } });
 
     if (user && user.password === password) {
       // Authentication successful
