@@ -5,7 +5,7 @@ const loginuser = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const user = await Users.findOne({ where: { username } });
+    const user = await Users.findOne({ where: { username: username } });
 
     if (user && user.password === password) {
       // Authentication successful

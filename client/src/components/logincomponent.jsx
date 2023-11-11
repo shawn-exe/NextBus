@@ -7,7 +7,7 @@ import axios from 'axios'
 function Logincomponent(props) {
 
   const [values,setValues]=useState({
-    email: '',
+    username: '',
     password: '',
   }
   );
@@ -52,9 +52,9 @@ function Logincomponent(props) {
                       <input
                         className="flex h-10 w-full rounded-lg border border-gray border-solid bg-transparent  text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                         type="email"
-                        name='email'
+                        name='username'
                         placeholder="username"
-                        onChange={e =>setValues({...values,email:e.target.value})}
+                        onChange={e =>setValues({...values,username:e.target.value})}
                       ></input>
                     </div>
                   </div>
