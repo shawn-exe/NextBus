@@ -25,7 +25,15 @@ const User = sequelize.define('User', {
   },
 });
 
-
+/*User.create({
+  username:"admin@gmail.com",
+  password:"myadmin",
+  roleId:2,
+}).then((user) =>{
+    console.log("User created successfully",user)
+}).catch((err) => {
+  console.log("An error occured",err)
+})*/
 
 User.sync();
 module.exports = User;
