@@ -4,15 +4,15 @@ import Logo from '../assets/logo.svg'
 import Cancel from '../assets/cancel.svg'
 import { useState } from 'react'
 import axios from 'axios'
-function Logincomponent(props) {
-  const [values,setValues]=useState({
+function Signupcomponent(props) {
+  /*const [values,setValues]=useState({
     username: '',
     password: '',
   }
-  );
-  const [errorMessage, setErrorMessage] = useState('');
-  const navigate=useNavigate();
-  const handleSubmit = (e) => {
+  );*/
+ const [errorMessage, setErrorMessage] = useState('');
+  //const navigate=useNavigate();
+ /* const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
       .then(res => {
@@ -26,7 +26,7 @@ function Logincomponent(props) {
         console.log(err);
         setErrorMessage('Invalid Credentials!! Please try again..');
       });
-  };
+  };*/
 
 
 
@@ -44,9 +44,9 @@ function Logincomponent(props) {
               </p>
             )}
               <h2 className="text-center text-2xl font-bold leading-tight text-black">
-                Log in to your account
+                Create Your Personal Account
               </h2>             
-              <form action="#" method="POST" className="mt-8" onSubmit={handleSubmit} >
+              <form action="#" method="POST" className="mt-8"  >
                 <div className="space-y-5">
                   <div>
                     <label htmlFor="" className="text-base font-medium text-gray-900">
@@ -59,7 +59,7 @@ function Logincomponent(props) {
                         type="email"
                         name='username'
                         placeholder="username"
-                        onChange={e =>setValues({...values,username:e.target.value})}
+                        //onChange={e =>setValues({...values,username:e.target.value})}
                       ></input>
                     </div>
                   </div>
@@ -76,7 +76,7 @@ function Logincomponent(props) {
                         className="flex h-10 w-full rounded-lg border border-gray bg-transparent  text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                         type="password"
                         placeholder="Password"
-                        onChange={e =>setValues({...values,password:e.target.value})}
+                        //onChange={e =>setValues({...values,password:e.target.value})}
                       ></input>
                     </div>
                   </div>
@@ -93,30 +93,16 @@ function Logincomponent(props) {
                 </div>
               </form>
               <p className="mt-2 text-center text-sm text-gray-600 ">
-                Don&apos;t have an account?{' '}
+                Already an user?{' '}
                 <a
                   href="#"
                   title=""
                   className="font-semibold text-black transition-all duration-200 hover:underline"
                   onClick={props.onClick1}
                 >
-                  Sign Up
+                  Log in
                 </a>
-              </p>
-              <div className='flex flex-row align-middle items-center justify-evenly w-full'>
-              <button
-                type="submit"
-                className="flex w-2/5 cursor-pointer items-center align-middle text-center justify-center rounded-lg bg-black py-1 px-2 font-semibold leading-7 text-white hover:bg-black/80"
-                >
-                Admin Login
-              </button>
-              <button
-                type="button"
-                className="flex cursor-pointer w-2/5 items-center align-middle text-center justify-center rounded-lg bg-black py-1 px-2 font-semibold leading-7 text-white hover:bg-black/80"
-                >
-                BTO Login
-              </button>                        
-              </div>
+             </p> 
             </div>
           </div>   
           <div className='cursor-pointer'>
@@ -126,4 +112,4 @@ function Logincomponent(props) {
     </div>
   )
 }
-export default Logincomponent
+export default Signupcomponent
