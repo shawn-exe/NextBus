@@ -1,5 +1,4 @@
 import {React } from 'react'
-import {useNavigate} from 'react-router-dom';
 import Logo from '../assets/logo.svg'
 import Cancel from '../assets/cancel.svg'
 import { useState } from 'react'
@@ -11,13 +10,12 @@ const [values,setValues]=useState({
   }
   );
  const [errorMessage, setErrorMessage] = useState('');
-  const navigate=useNavigate();
  const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/registeruser', values)
       .then(res => {
-        if (res.data.status === 'Success') 
-        window.location.reload();
+        if (res.data.status === 'Success') {
+          window.location.reload();}
       })
       .catch(err => {
         console.log(err);

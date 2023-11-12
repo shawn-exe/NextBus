@@ -6,13 +6,14 @@ import HContent from "../components/HomeContent/hometext";
 import Graphic1 from "../components/HomeContent/grahpic1";
 import LoginButton from "../components/loginbtn";
 import Footer from "../components/Footer/footer";
-
+import { useAuth } from '../context/AuthContext';
 function Home() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setshowSignup] = useState(false);
+  const {authenticated }=useAuth();
   const handleGetStartedClick1 = () => {
     setShowLogin(true);
-    setshowSignup(false); // Make sure to hide Signupcomponent when showing Logincomponent
+    setshowSignup(false); 
   };
 
   const handleGetStartedClick2 = () => {
@@ -24,7 +25,7 @@ function Home() {
     setshowSignup(true);
     setShowLogin(false); // Make sure to hide Logincomponent when showing Signupcomponent
   };
-
+  console.log("status:",authenticated);
   return (
     <div className='bg-light-purple w-full min-h-screen'>
       <Nav />
@@ -52,6 +53,7 @@ function Home() {
 
     </div>
   );
+
 }
 
 export default Home;

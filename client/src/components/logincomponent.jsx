@@ -4,6 +4,7 @@ import Logo from '../assets/logo.svg'
 import Cancel from '../assets/cancel.svg'
 import { useState } from 'react'
 import axios from 'axios'
+import { useAuth } from '../context/AuthContext';
 function Logincomponent(props) {
   const [values,setValues]=useState({
     username: '',
@@ -12,11 +13,13 @@ function Logincomponent(props) {
   );
   const [errorMessage, setErrorMessage] = useState('');
   const navigate=useNavigate();
+  const { login } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
-      .then(res => {    
-          navigate('/mainpage');
+      .then(res => { 
+        login(); 
+        navigate('/mainpage');
       })
       .catch(err => {
         console.log(err);
