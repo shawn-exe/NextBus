@@ -5,31 +5,25 @@ import Cancel from '../assets/cancel.svg'
 import { useState } from 'react'
 import axios from 'axios'
 function Signupcomponent(props) {
-  /*const [values,setValues]=useState({
+const [values,setValues]=useState({
     username: '',
     password: '',
   }
-  );*/
+  );
  const [errorMessage, setErrorMessage] = useState('');
-  //const navigate=useNavigate();
- /* const handleSubmit = (e) => {
+  const navigate=useNavigate();
+ const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/loginuser', values)
+    axios.post('http://localhost:3001/registeruser', values)
       .then(res => {
-        if (res.data.status === 'Success') {
-          navigate('/mainpage');
-        } else {
-          setErrorMessage('Invalid Credentials. Please try again.');
-        }
+        if (res.data.status === 'Success') 
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
-        setErrorMessage('Invalid Credentials!! Please try again..');
+        setErrorMessage('Account already Exists!! Try Login..');
       });
-  };*/
-
-
-
+  };
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
       <div className='w-full flex flex-row justify-center fixed gap-1'>
@@ -46,7 +40,7 @@ function Signupcomponent(props) {
               <h2 className="text-center text-2xl font-bold leading-tight text-black">
                 Create Your Personal Account
               </h2>             
-              <form action="#" method="POST" className="mt-8"  >
+              <form action="#" method="POST" className="mt-8" onSubmit={handleSubmit} >
                 <div className="space-y-5">
                   <div>
                     <label htmlFor="" className="text-base font-medium text-gray-900">
@@ -58,8 +52,8 @@ function Signupcomponent(props) {
                         className="flex h-10 w-full rounded-lg border border-gray border-solid bg-transparent  text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                         type="email"
                         name='username'
-                        placeholder="username"
-                        //onChange={e =>setValues({...values,username:e.target.value})}
+                        placeholder="Enter email.."
+                        onChange={e =>setValues({...values,username:e.target.value})}
                       ></input>
                     </div>
                   </div>
@@ -75,8 +69,8 @@ function Signupcomponent(props) {
                       <input
                         className="flex h-10 w-full rounded-lg border border-gray bg-transparent  text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                         type="password"
-                        placeholder="Password"
-                        //onChange={e =>setValues({...values,password:e.target.value})}
+                        placeholder="Enter new Password.."
+                        onChange={e =>setValues({...values,password:e.target.value})}
                       ></input>
                     </div>
                   </div>
@@ -86,7 +80,7 @@ function Signupcomponent(props) {
                        type="submit"
                          className="cursor-pointer flex w-full items-center align-middle text-center justify-center rounded-lg bg-black py-1 px-2 font-semibold leading-7 text-white hover:bg-black/80"
                               >
-                            Login
+                            Submit
                           </button>
                           
                   </div>

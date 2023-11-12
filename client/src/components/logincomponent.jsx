@@ -15,21 +15,14 @@ function Logincomponent(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
-      .then(res => {
-        if (res.data.status === 'Success') {
+      .then(res => {    
           navigate('/mainpage');
-        } else {
-          setErrorMessage('Invalid Credentials. Please try again.');
-        }
       })
       .catch(err => {
         console.log(err);
         setErrorMessage('Invalid Credentials!! Please try again..');
       });
   };
-
-
-
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
       <div className='w-full flex flex-row justify-center fixed gap-1'>
