@@ -34,7 +34,7 @@ const Buses = sequelize.define('Buses', {
         },
     }
 });
-Buses.create({
+/*Buses.create({
     regno: 'KA19VC2091',
     bname: 'Kanthi',
     type: 'Local',
@@ -47,6 +47,7 @@ Buses.create({
     })
     .catch((error) => {
         console.error('Error creating bus:', error);
-    });
+    });*/
+Buses.belongsTo(Routes, { foreignKey: 'routeid' });
 Buses.sync();
 module.exports = Buses;

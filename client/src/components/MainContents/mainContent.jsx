@@ -1,64 +1,34 @@
-import React from 'react'
-import Headings from './headings'
-import Binfo from './binfo'
-function mainContent() {
+import React, { useEffect, useState } from 'react';
+import Headings from './headings';
+import Binfo from './binfo';
+import axios from 'axios';
+
+function MainContent() {
+  const [buses, setBuses] = useState([]);
+
+  useEffect(() => {
+    // Fetch data when the component mounts
+    axios.get('http://localhost:3001/getAllBuses')
+      .then(response => setBuses(response.data))
+      .catch(error => console.error('Error fetching buses:', error));
+  }, []);
+
   return (
-        <div className= 'w-4/5 bg-blueviolet rounded-l-[1.5rem] pt-6 h-[35rem] hide-scrollbar overflow-y-auto'>
-        <Headings  className="sticky" />
-        <div className='flex flex-col gap-2 mt-2 mb-4 py-2 overflow-y-auto h-[32rem] hide-scrollbar '> 
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Naveen" btime="8:12 Am" bdestination="Belman" btype="Local" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Kanthi" btime="9:20 Am" bdestination="Padubidri" btype="Local" />
-        <Binfo bname="Vishal" btime="9:35 Am" bdestination="Karkala" btype="Fast-Service" />
-        <Binfo bname="Naveen" btime="8:12 Am" bdestination="Belman" btype="Local" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" /> 
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Kanthi" btime="9:20 Am" bdestination="Padubidri" btype="Local" />
-        <Binfo bname="Vishal" btime="9:35 Am" bdestination="Karkala" btype="Fast-Service" />
-        <Binfo bname="Naveen" btime="8:12 Am" bdestination="Belman" btype="Local" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" /> 
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" /> 
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Kanthi" btime="9:20 Am" bdestination="Padubidri" btype="Local" />
-        <Binfo bname="Vishal" btime="9:35 Am" bdestination="Karkala" btype="Fast-Service" />
-        <Binfo bname="Naveen" btime="8:12 Am" bdestination="Belman" btype="Local" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" /> 
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Star" btime="8:15 Am" bdestination="Udupi" btype="Fast-Service" /> 
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Vishal" btime="8:00 Am" bdestination="Mangalore" btype="Express" />
-        <Binfo bname="Navadurga Prasad" btime="8:10 Am" bdestination="Karkala" btype="Express"  />
-        <Binfo bname="Padmambika" btime="8:20 Am" bdestination="Karkala" btype="Express" />
-        <Binfo bname="Reshma" btime="9:10 Am" bdestination="Mangalore" btype="Express"  />
-        <Binfo bname="Kanthi" btime="9:20 Am" bdestination="Padubidri" btype="Local" />
-        <Binfo bname="Vishal" btime="9:35 Am" bdestination="Karkala" btype="Fast-Service" />
-        </div>
-        </div>
-  )
+    <div className='w-4/5 bg-blueviolet rounded-l-[1.5rem] pt-6 h-[35rem] hide-scrollbar overflow-y-auto'>
+      <Headings className="sticky" />
+      <div className='flex flex-col gap-2 mt-2 mb-4 py-2 overflow-y-auto h-[32rem] hide-scrollbar '>
+        {buses.map(bus => (
+          <Binfo
+            key={bus.regno}
+            bname={bus.bname}
+            btime={bus.arrtime}
+            bdestination={bus.Route.destination}
+            btype={bus.type}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default mainContent
+export default MainContent;
