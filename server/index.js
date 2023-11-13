@@ -11,6 +11,7 @@ require('dotenv').config();
 const Role =require('./models/Role')
 const Users =require('./models/Users')
 const Routes =require('./models/Routes')
+const Buses =require('./models/Buses')
 const app = express();
 const port = process.env.PORT || 3001;
 const sequelize=require('./db')
