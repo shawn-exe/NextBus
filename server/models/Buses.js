@@ -1,6 +1,7 @@
 const sequelize = require("../db");
 const DataTypes = require("sequelize");
-const Routes =require('./Routes')
+const Routes = require('./Routes');
+
 const Buses = sequelize.define('Buses', {
     regno: {
         type: DataTypes.STRING,
@@ -15,23 +16,38 @@ const Buses = sequelize.define('Buses', {
         allowNull: false,
     },
     arrtime: {
-        type: DataTypes.STRING, // Use STRING to store time in 12-hour format
+        type: DataTypes.STRING,
         allowNull: false,
-        get() {
-            const rawValue = this.getDataValue('arrtime');
-            // Format the time using Sequelize's custom getter
-            return rawValue ? rawValue.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }) : null;
+        set(value) {    
+            if (value) {
+                const formattedTime = new Date(`2000-01-01T${value}`);
+                this.setDataValue('arrtime', formattedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }));
+            }
         },
     },
     routeid: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: Routes, // The name of the referenced table (assuming it's also named 'Routes')
-            key: 'routeid', // The name of the referenced column in the referenced table
+            model: Routes,
+            key: 'routeid',
         },
     }
 });
+
+/*Buses.create({
+    regno: 'kaanti',
+    bname: 'ajssj sasBus',
+    type: 'non-AC',
+    arrtime: '13:59',
+    routeid: 1,
+})
+    .then((bus) => {
+        console.log('Bus created:', bus);
+    })
+    .catch((error) => {
+        console.error('Error creating bus:', error);
+    });*/
 
 Buses.sync();
 module.exports = Buses;

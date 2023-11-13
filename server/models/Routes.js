@@ -15,7 +15,7 @@ const Routes =sequelize.define('Routes',{
         allowNull: false,
     },  
     duration: {
-        type: DataTypes.STRING, // Using STRING to store "1hr 45 mins"
+        type: DataTypes.STRING, 
         allowNull: false,
     },
     stops:{
@@ -23,5 +23,7 @@ const Routes =sequelize.define('Routes',{
         allowNull: false,
     }
 });
+
+
 Routes.sync();
 module.exports=Routes;
