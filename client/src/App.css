@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Content:wght@400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,6 +30,7 @@ body {
 }
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Carter+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap");

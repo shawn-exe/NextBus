@@ -25,6 +25,9 @@ module.exports = {
       fontFamily: {
         "droid-sans": "'Droid Sans'",
         acme: "Acme",
+        poppins: "Poppins",
+        "open-sans": "'Open Sans'",
+        "base-large": "Roboto",
         inter: "Inter",
         "carter-one": "'Carter One'",
         mulish: "Mulish",
@@ -32,6 +35,7 @@ module.exports = {
         arimo: "Arimo",
         lato: "Lato",
         "dm-sans": "'DM Sans'",
+        content: "Content",
       },
       borderRadius: {
         "81xl": "100px",

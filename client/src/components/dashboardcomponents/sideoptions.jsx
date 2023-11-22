@@ -1,0 +1,99 @@
+import React from 'react';
+import { useState } from 'react';
+import { ChevronRight, Bus, Eye, BadgePlus,Route,Ticket} from 'lucide-react';
+
+function Sideoptions() {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  return (
+    <div className='w-3/4 flex-col font-poppins my-8 mx-2 space-y-7'>
+      <div className='w-full'>
+        <div
+          onClick={() => toggleDropdown(1)}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+        >
+          <div className='flex flex-row gap-1 items-center'>
+            <Bus className='h-5 w-5' />
+            <div className='text-[0.9rem]'>BUSES</div>
+          </div>
+          <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 1 ? 'rotate-90' : ''}`} />
+        </div>
+        {activeDropdown === 1 && (
+          <div className='flex flex-col items-end p-1'>
+            <div className='text-[0.7rem]'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <Eye className='h-3 w-3' />
+                <div>View Bus</div>
+              </div>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <BadgePlus className='h-3 w-3' />
+                <div>Add Bus</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className='w-full'>
+        <div
+          onClick={() => toggleDropdown(2)}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+        >
+          <div className='flex flex-row gap-1 items-center'>
+            <Route className='h-5 w-5' />
+            <div className='text-[0.9rem]'>Routes</div>
+          </div>
+          <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 2 ? 'rotate-90' : ''}`} />
+        </div>
+        {activeDropdown === 2 && (
+          <div className='flex flex-col items-end p-1'>
+            <div className='text-[0.7rem]'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <Eye className='h-3 w-3' />
+                <div>View Routes</div>
+              </div>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <BadgePlus className='h-3 w-3' />
+                <div>Add Routes</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className='w-full'>
+        <div
+          onClick={() => toggleDropdown(3)}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+        >
+          <div className='flex flex-row gap-1 items-center'>
+            <Ticket className='h-5 w-5' />
+            <div className='text-[0.9rem]'>Fares</div>
+          </div>
+          <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 2 ? 'rotate-90' : ''}`} />
+        </div>
+        {activeDropdown === 3 && (
+          <div className='flex flex-col items-end p-1'>
+            <div className='text-[0.7rem]'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <Eye className='h-3 w-3' />
+                <div>View Fares</div>
+              </div>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+                <BadgePlus className='h-3 w-3' />
+                <div>Add Fares</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+    </div>
+  );
+}
+
+export default Sideoptions;
