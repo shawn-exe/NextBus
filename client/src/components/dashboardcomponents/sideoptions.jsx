@@ -14,7 +14,7 @@ function Sideoptions() {
       <div className='w-full'>
         <div
           onClick={() => toggleDropdown(1)}
-          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-[0.5rem] hover:bg-grayb'}
         >
           <div className='flex flex-row gap-1 items-center'>
             <Bus className='h-5 w-5' />
@@ -25,11 +25,11 @@ function Sideoptions() {
         {activeDropdown === 1 && (
           <div className='flex flex-col items-end p-1'>
             <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <Eye className='h-3 w-3' />
                 <div>View Bus</div>
               </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <BadgePlus className='h-3 w-3' />
                 <div>Add Bus</div>
               </div>
@@ -41,7 +41,7 @@ function Sideoptions() {
       <div className='w-full'>
         <div
           onClick={() => toggleDropdown(2)}
-          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center  p-[0.5rem] hover:bg-grayb'}
         >
           <div className='flex flex-row gap-1 items-center'>
             <Route className='h-5 w-5' />
@@ -52,11 +52,11 @@ function Sideoptions() {
         {activeDropdown === 2 && (
           <div className='flex flex-col items-end p-1'>
             <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
                 <Eye className='h-3 w-3' />
                 <div>View Routes</div>
               </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
                 <BadgePlus className='h-3 w-3' />
                 <div>Add Routes</div>
               </div>
@@ -68,7 +68,7 @@ function Sideoptions() {
       <div className='w-full'>
         <div
           onClick={() => toggleDropdown(3)}
-          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center p-1 hover:bg-gray-200'}
+          className={'flex cursor-pointer flex-row rounded-lg justify-between items-center  p-[0.5rem] hover:bg-grayb'}
         >
           <div className='flex flex-row gap-1 items-center'>
             <Ticket className='h-5 w-5' />
@@ -79,11 +79,11 @@ function Sideoptions() {
         {activeDropdown === 3 && (
           <div className='flex flex-col items-end p-1'>
             <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
                 <Eye className='h-3 w-3' />
                 <div>View Fares</div>
               </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-gray-300'>
+              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
                 <BadgePlus className='h-3 w-3' />
                 <div>Add Fares</div>
               </div>

@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/home';
 import Mainpage from './pages/mainpage';
 import AuthRoute from './context/AuthenticateRoute';
+import Admindashboard from './pages/admindashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/mainpage" element={<AuthRoute />}>
           <Route index element={<Mainpage />} />
+        </Route>
+        <Route path="/admindashboard" element={<AuthRoute />}>
+          <Route index element={<Admindashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

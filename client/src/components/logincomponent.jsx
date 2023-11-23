@@ -14,6 +14,7 @@ function Logincomponent(props) {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate=useNavigate();
   const { login } = useAuth();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/loginuser', values)
@@ -26,6 +27,20 @@ function Logincomponent(props) {
         setErrorMessage('Invalid Credentials!! Please try again..');
       });
   };
+
+  const handleadminSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:3001/loginadmin', values)
+      .then(res => { 
+        login(); 
+        navigate('/admindashboard');
+      })
+      .catch(err => {
+        console.log(err);
+        setErrorMessage('Invalid Credentials!! Please try again..');
+      });
+  };
+
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
       <div className='w-full flex flex-row justify-center fixed gap-1'>
@@ -100,8 +115,8 @@ function Logincomponent(props) {
                 </a>
               </p>
               <div className='flex flex-row align-middle items-center justify-evenly w-full'>
-              <button
-                type="submit"
+              <button onClick={handleadminSubmit}
+                type="button"
                 className="flex w-2/5 cursor-pointer items-center align-middle text-center justify-center rounded-lg bg-black py-1 px-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >
                 Admin Login
