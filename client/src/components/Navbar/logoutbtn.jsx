@@ -12,7 +12,7 @@ function Logoutbtn() {
       <button
         onClick={handleLogout}
         type="button"
-        className='rounded-full bg-mediumslateblue px-3 py-2 text-base font-bold text-black cursor-pointer shadow-sm items-center text-center'
+        className='rounded-full bg-mediumslateblue px-4 py-2 text-base font-bold text-black cursor-pointer shadow-sm items-center text-center'
       >
         Logout
       </button>

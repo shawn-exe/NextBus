@@ -18,18 +18,18 @@ function Sideoptions() {
         >
           <div className='flex flex-row gap-1 items-center'>
             <Bus className='h-5 w-5' />
-            <div className='text-[0.9rem]'>BUSES</div>
+            <div className='text-[1.1rem]'>BUSES</div>
           </div>
           <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 1 ? 'rotate-90' : ''}`} />
         </div>
         {activeDropdown === 1 && (
-          <div className='flex flex-col items-end p-1'>
-            <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+          <div className='flex flex-col items-end '>
+            <div className='w-full flex flex-col text-[0.8rem]'>
+              <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <Eye className='h-3 w-3' />
                 <div>View Bus</div>
               </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+              <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <BadgePlus className='h-3 w-3' />
                 <div>Add Bus</div>
               </div>
@@ -45,23 +45,23 @@ function Sideoptions() {
         >
           <div className='flex flex-row gap-1 items-center'>
             <Route className='h-5 w-5' />
-            <div className='text-[0.9rem]'>Routes</div>
+            <div className='text-[1.1rem]'>Routes</div>
           </div>
           <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 2 ? 'rotate-90' : ''}`} />
         </div>
         {activeDropdown === 2 && (
-          <div className='flex flex-col items-end p-1'>
-            <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
-                <Eye className='h-3 w-3' />
-                <div>View Routes</div>
-              </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
-                <BadgePlus className='h-3 w-3' />
-                <div>Add Routes</div>
-              </div>
+          <div className='flex flex-col items-end '>
+          <div className='w-full flex flex-col text-[0.8rem]'>
+            <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+              <Eye className='h-3 w-3' />
+              <div>View Routes</div>
+            </div>
+            <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+              <BadgePlus className='h-3 w-3' />
+              <div>Add Routes</div>
             </div>
           </div>
+        </div>
         )}
       </div>
 
@@ -72,23 +72,23 @@ function Sideoptions() {
         >
           <div className='flex flex-row gap-1 items-center'>
             <Ticket className='h-5 w-5' />
-            <div className='text-[0.9rem]'>Fares</div>
+            <div className='text-[1.1rem]'>Fares</div>
           </div>
           <ChevronRight className={` h-4 w-4 transition-transform ${activeDropdown === 2 ? 'rotate-90' : ''}`} />
         </div>
         {activeDropdown === 3 && (
-          <div className='flex flex-col items-end p-1'>
-            <div className='text-[0.7rem]'>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
-                <Eye className='h-3 w-3' />
-                <div>View Fares</div>
-              </div>
-              <div className='flex w-full justify-center items-center gap-1 cursor-pointer p-2 rounded-lg  hover:bg-grayb'>
-                <BadgePlus className='h-3 w-3' />
-                <div>Add Fares</div>
-              </div>
-            </div>
-          </div>
+           <div className='flex flex-col items-end '>
+           <div className='w-full flex flex-col text-[0.8rem]'>
+             <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+               <Eye className='h-3 w-3' />
+               <div>View Fares</div>
+             </div>
+             <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+               <BadgePlus className='h-3 w-3' />
+               <div>Add Fares</div>
+             </div>
+           </div>
+         </div>
         )}
       </div>
 

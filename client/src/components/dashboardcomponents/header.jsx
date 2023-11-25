@@ -1,4 +1,5 @@
 import React from 'react'
+import Logout from '../Navbar/logoutbtn'
 function header() {
   return (
     <div className='flex flex-col w-full'>
@@ -6,9 +7,7 @@ function header() {
         <div className="font-bold text-dimgray font-poppins inline-block text-[2.6rem]">
         Dashboard
         </div>
-        <div className="font-semibold text-mediumslateblue font-poppins inline-block text-[1.2rem]">
-        Logout
-        </div>
+        <Logout />
   </div>
     <div className='px-4'>
       <div className='h-[0.15rem] bg-gainsboro w-full'/>
