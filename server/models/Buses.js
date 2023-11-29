@@ -1,6 +1,7 @@
 const sequelize = require("../db");
 const DataTypes = require("sequelize");
 const Routes = require('./Routes');
+
 const Buses = sequelize.define('Buses', {
     regno: {
         type: DataTypes.STRING,
@@ -33,21 +34,18 @@ const Buses = sequelize.define('Buses', {
             key: 'routeid',
         },
     }
+}, {
+    timestamps: false, // Disable createdAt and updatedAt
 });
-/*Buses.create({
-    regno: 'KA19VC2091',
-    bname: 'Kanthi',
-    type: 'Local',
-    arrtime: '14:58',
-    routeid: 1,
-})
-    .then((bus) => {
-        console.log('Bus created');
 
-    })
-    .catch((error) => {
-        console.error('Error creating bus:', error);
-    });*/
+/*Buses.create({
+    regno: "KA21EZ101",
+    bname:"Vishal",
+    type: "Express",
+    arrtime: "13:15",
+    routeid: 1
+})*/
+
 Buses.belongsTo(Routes, { foreignKey: 'routeid' });
 Buses.sync();
 module.exports = Buses;
