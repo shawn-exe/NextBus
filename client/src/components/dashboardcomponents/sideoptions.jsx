@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { ChevronRight, Bus, Eye, BadgePlus,Route,Ticket} from 'lucide-react';
 
-function Sideoptions({ toggleContent }) {
+function Sideoptions({ toggleContent,togglelabel}) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (index) => {
@@ -10,8 +10,16 @@ function Sideoptions({ toggleContent }) {
   };
 
   const handleViewRoutesClick = () => {
-    toggleContent('route'); // Call the toggleContent function with 'route' when "View Routes" is clicked
-    //toggleDropdown(2); // Close the dropdown
+    toggleContent('route');
+    togglelabel('Add Route');   
+  };
+  const handleViewBusesClick = () => {
+    toggleContent('bus');
+    togglelabel('Add Bus');    
+  };
+  const handleViewFaresClick = () => {
+    toggleContent('fare'); 
+    togglelabel('Add Fare');   
   };
 
   return (
@@ -30,7 +38,7 @@ function Sideoptions({ toggleContent }) {
         {activeDropdown === 1 && (
           <div className='flex flex-col items-end '>
             <div className='w-full flex flex-col text-[0.8rem]'>
-              <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+              <div onClick={handleViewBusesClick} className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <Eye className='h-3 w-3' />
                 <div>View Bus</div>
               </div>
@@ -84,7 +92,7 @@ function Sideoptions({ toggleContent }) {
         {activeDropdown === 3 && (
            <div className='flex flex-col items-end '>
            <div className='w-full flex flex-col text-[0.8rem]'>
-             <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+             <div onClick={handleViewFaresClick} className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                <Eye className='h-3 w-3' />
                <div>View Fares</div>
              </div>

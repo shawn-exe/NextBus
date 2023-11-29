@@ -3,6 +3,7 @@ const cors = require('cors');
 const userRouter = require('./Routes/userRoutes');
 const busRouter = require('./Routes/busRoutes'); 
 const routeRouter = require('./Routes/routeRoutes'); 
+const fareRouter =require('./Routes/fareRoutes')
 // Import the new bus route
 const bodyParser = require('body-parser');
 const mysql2 = require('mysql2');
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(userRouter);
 app.use(busRouter);
 app.use(routeRouter);// Use the new bus route
+app.use(fareRouter);
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Test the connection
