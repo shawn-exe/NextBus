@@ -1,10 +1,10 @@
 const Buses = require('../models/Buses');
-const Routes =require('../models/Routes')
+const Routes =require('../models/Routes');
 const getAllBuses = async () => {
   try {
     const buses = await Buses.findAll({
-      order: [['arrtime', 'ASC']], // Order by arrtime in ascending order
-      include: [{ model: Routes, attributes: ['source', 'destination'] }], // Include related Route information
+      order: [['arrtime', 'ASC']], 
+      include: [{ model: Routes, attributes: ['source', 'destination'] }], 
     });
     return buses;
   } catch (error) {

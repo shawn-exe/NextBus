@@ -2,11 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import { ChevronRight, Bus, Eye, BadgePlus,Route,Ticket} from 'lucide-react';
 
-function Sideoptions() {
+function Sideoptions({ toggleContent }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const handleViewRoutesClick = () => {
+    toggleContent('route'); // Call the toggleContent function with 'route' when "View Routes" is clicked
+    //toggleDropdown(2); // Close the dropdown
   };
 
   return (
@@ -29,7 +34,7 @@ function Sideoptions() {
                 <Eye className='h-3 w-3' />
                 <div>View Bus</div>
               </div>
-              <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+              <div  className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                 <BadgePlus className='h-3 w-3' />
                 <div>Add Bus</div>
               </div>
@@ -52,7 +57,7 @@ function Sideoptions() {
         {activeDropdown === 2 && (
           <div className='flex flex-col items-end '>
           <div className='w-full flex flex-col text-[0.8rem]'>
-            <div className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+            <div onClick={() => handleViewRoutesClick()} className='flex justify-end items-center gap-1 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
               <Eye className='h-3 w-3' />
               <div>View Routes</div>
             </div>

@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const userRouter = require('./Routes/userRoutes');
-const busRouter = require('./Routes/busRoutes'); // Import the new bus route
+const busRouter = require('./Routes/busRoutes'); 
+const routeRouter = require('./Routes/routeRoutes'); 
+// Import the new bus route
 const bodyParser = require('body-parser');
 const mysql2 = require('mysql2');
 const { Sequelize } = require('sequelize');
@@ -13,6 +15,7 @@ const Role = require('./models/Role');
 const Users = require('./models/Users');
 const Routes = require('./models/Routes');
 const Buses = require('./models/Buses');
+const Fares = require('./models/Fares');
 const app = express();
 const port = process.env.PORT || 3001;
 const sequelize = require('./db');
@@ -23,7 +26,8 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(userRouter);
-app.use(busRouter); // Use the new bus route
+app.use(busRouter);
+app.use(routeRouter);// Use the new bus route
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Test the connection
