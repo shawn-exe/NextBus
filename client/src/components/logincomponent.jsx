@@ -41,6 +41,19 @@ function Logincomponent(props) {
       });
   };
 
+  const handlebtoSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:3001/loginbto', values)
+      .then(res => { 
+        login(); 
+        navigate('/btodashboard');
+      })
+      .catch(err => {
+        console.log(err);
+        setErrorMessage('Invalid Credentials!! Please try again..');
+      });
+  };
+
   return (
     <div className=' flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
       <div className='w-full flex flex-row justify-center fixed gap-1'>
@@ -121,7 +134,7 @@ function Logincomponent(props) {
                 >
                 Admin Login
               </button>
-              <button
+              <button onClick={handlebtoSubmit}
                 type="button"
                 className="flex cursor-pointer w-2/5 items-center align-middle text-center justify-center rounded-lg bg-black py-1 px-2 font-semibold leading-7 text-white hover:bg-black/80"
                 >

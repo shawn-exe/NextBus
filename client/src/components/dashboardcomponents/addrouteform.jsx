@@ -1,22 +1,22 @@
 import React from 'react'
 
-function Addbusform() {
+function Addrouteform() {
   return (
     <div className=" w-full h-[28rem] flex justify-center items-center ">   
         <div className="w-4/5 rounded-xl bg-white p-4 shadow">
-          <p className="text-md font-bold text-center text-gray-900">Enter the bus Info</p>
+          <p className="text-md font-bold text-center text-gray-900">Enter the Route Info</p>
           <div className="flex flex-row flex-wrap w-full gap-24 justify-center mb-5">
             <div className="w-1/3">
               <label
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 htmlFor="firstName"
               >
-                Registor Number
+                Route Number
               </label>
               <input
                 className="flex h-7  w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                type="text"
-                placeholder="Enter the Registor Number"
+                type="number"
+                placeholder="Enter the Route Number"
                 id="firstName"
               ></input>
             </div>
@@ -26,12 +26,12 @@ function Addbusform() {
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 htmlFor="lastName"
               >
-                Bus Name
+                Source
               </label>
               <input
                 className="flex h-7 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                 type="text"
-                placeholder="Enter the Bus Name"
+                placeholder="Enter the Source"
                 id="lastName"
               ></input>
             </div> 
@@ -43,12 +43,12 @@ function Addbusform() {
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 htmlFor="firstName"
               >
-                Bus Type
+               Destination
               </label>
               <input
                 className="flex h-7  w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                 type="text"
-                placeholder="Enter the  Bus Type"
+                placeholder="Enter the Destination"
                 id="firstName"
               ></input>
             </div>
@@ -58,12 +58,12 @@ function Addbusform() {
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 htmlFor="lastName"
               >
-                Arrival time
+                Duration
               </label>
               <input
                 className="flex h-7 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                 type="text"
-                placeholder="Enter the Arrival time"
+                placeholder="Enter the Duration"
                 id="lastName"
               ></input>
             </div> 
@@ -75,12 +75,12 @@ function Addbusform() {
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 htmlFor="lastName"
               >
-               Route Number
+               Stops
               </label>
               <input
                 className="flex h-7 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                type="text"
-                placeholder="Enter the Route Number"
+                type="number"
+                placeholder="Enter the Number of stops"
                 id="lastName"
               ></input>
             </div> 
@@ -99,6 +99,6 @@ function Addbusform() {
 
   );
 }
-export default Addbusform
+export default Addrouteform
 
 

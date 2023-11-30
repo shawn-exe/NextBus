@@ -5,6 +5,8 @@ import Buscontent from '../components/dashboardcomponents/buscontent'
 import Routecontent from '../components/dashboardcomponents/routeComponents/routescontent'
 import FareContent from '../components/dashboardcomponents/fareComponents/farecontent'
 import Addbusform from '../components/dashboardcomponents/addbusform'
+import AddFaresform from '../components/dashboardcomponents/addfaresform'
+import Addrouteform from '../components/dashboardcomponents/addrouteform'
 import Addbtn from '../components/dashboardcomponents/addbtn'
 function Admindashboard() {
   const [content, setContent] = useState('bus'); 
@@ -31,6 +33,8 @@ function Admindashboard() {
           {content === 'route' && <Routecontent />}
           {content === 'fare' && <FareContent />}
           {content === 'addbus' && <Addbusform />}
+          {content === 'addroute' && <Addrouteform />}
+          {content === 'addfares' && <AddFaresform />}
         </div>
     </div>
   )

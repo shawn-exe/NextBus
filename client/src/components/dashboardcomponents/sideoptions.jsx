@@ -22,9 +22,17 @@ function Sideoptions({ toggleContent,togglelabel}) {
     togglelabel('Add Fare');   
   };
   const handleAddBusClick = () => {
-    toggleContent('addbus'); 
-    togglelabel('Add bus');   
+    toggleContent('addbus');    
   };
+
+  const handleAddRouteClick = () => {
+    toggleContent('addroute');    
+  };
+  
+  const handleAddFaresClick = () => {
+    toggleContent('addfares');    
+  };
+
 
   return (
     <div className='w-3/4 flex-col font-poppins my-8 mx-2 space-y-7'>
@@ -73,7 +81,7 @@ function Sideoptions({ toggleContent,togglelabel}) {
               <Eye className='h-3 w-3' />
               <div>View Routes</div>
             </div>
-            <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+            <div onClick={handleAddRouteClick} className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
               <BadgePlus className='h-3 w-3' />
               <div>Add Routes</div>
             </div>
@@ -100,7 +108,7 @@ function Sideoptions({ toggleContent,togglelabel}) {
                <Eye className='h-3 w-3' />
                <div>View Fares</div>
              </div>
-             <div className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
+             <div onClick={handleAddFaresClick} className='flex justify-end items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-grayb'>
                <BadgePlus className='h-3 w-3' />
                <div>Add Fares</div>
              </div>
