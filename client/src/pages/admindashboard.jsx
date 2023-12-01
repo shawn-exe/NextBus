@@ -27,7 +27,7 @@ function Admindashboard() {
             <Header />
           </div>
           <div className='w-4/5 pl-10 h-[5rem] flex flex-row justify-between items-center'>
-            <Addbtn name={addlabel} />
+          <Addbtn name={addlabel} />
           </div> 
           {content === 'bus' && <Buscontent />}
           {content === 'route' && <Routecontent />}

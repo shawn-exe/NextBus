@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getAllRoutes } = require('../controllers/busrouteController');
+const { getAllRoutes,createRoute } = require('../controllers/busrouteController');
+
+router.post('/createRoute',createRoute)
 
 router.get('/getAllRoutes', async (req, res) => {
   try {

@@ -10,12 +10,13 @@ const [values,setValues]=useState({
   }
   );
  const [errorMessage, setErrorMessage] = useState('');
+ const [successmessage, setsuccessmessage] = useState('');
  const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/registeruser', values)
       .then(res => {
         if (res.data.status === 'Success') {
-          window.location.reload();}
+          setsuccessmessage('User Registration sucessfull! Please log in..');}
       })
       .catch(err => {
         console.log(err);
@@ -35,6 +36,11 @@ const [values,setValues]=useState({
                 {errorMessage}
               </p>
             )}
+             {successmessage && (
+              <p className={`text-green-500 text-sm font-bold text-center mt-2 animate-error ${successmessage && 'animate'}`}>
+                {successmessage}
+              </p>
+          )}
               <h2 className="text-center text-2xl font-bold leading-tight text-black">
                 Create Your Personal Account
               </h2>             
