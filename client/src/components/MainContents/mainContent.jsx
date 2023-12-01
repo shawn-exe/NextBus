@@ -3,7 +3,7 @@ import Headings from './headings';
 import Binfo from './binfo';
 import axios from 'axios';
 
-function MainContent() {
+function MainContent({ openinfowindow }) {
   const [buses, setBuses] = useState([]);
 
   useEffect(() => {
@@ -24,6 +24,7 @@ function MainContent() {
             btime={bus.arrtime}
             bdestination={bus.Route.destination}
             btype={bus.type}
+            openinfowindow={openinfowindow}
           />
         ))}
       </div>
