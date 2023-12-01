@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getAllBuses } = require('../controllers/busController');
+const { getAllBuses,addbuses} = require('../controllers/busController');
 
+router.post('/addbuses',addbuses)
 router.get('/getAllBuses', async (req, res) => {
   try {
     const buses = await getAllBuses();

@@ -20,7 +20,7 @@ const getAllFares = async () => {
         return res.status(400).json({ status: 'Failure', message: 'Ticket Fare information already exists' });
       }
       // Create a new Route
-      const newRoute = await Fares.create({
+      const newFare = await Fares.create({
         fareid,
         routeid,
         cfare,

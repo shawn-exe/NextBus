@@ -13,4 +13,24 @@ const getAllBuses = async () => {
   }
 };
 
-module.exports = { getAllBuses };
+const addbuses = async (req, res) => {
+  const { regno, bname, type, arrtime, routeid } = req.body;
+  try {
+    const existingBus = await Buses.findOne({ where: { regno,arrtime} });
+    if (existingBus) {
+      return res.status(400).json({ status: 'Failure', message: 'Bus already exists' });
+    }
+    // Create a new Route
+    const newBus = await Buses.create({
+      regno,
+      bname,
+      type,
+      arrtime,
+      routeid,
+    });
+    return res.status(201).json({ status: 'Success', message: 'Bus added successfully'});
+  } catch (error) {
+    return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
+  }
+};
+module.exports = { getAllBuses,addbuses };

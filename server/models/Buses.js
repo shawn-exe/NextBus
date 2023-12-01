@@ -21,11 +21,15 @@ const Buses = sequelize.define('Buses', {
         primaryKey: true,
         set(value) {    
             if (value) {
-                const formattedTime = new Date(`2000-01-01T${value}`);
+                const [hours, minutes] = value.split(':');
+                const formattedTime = new Date();
+                formattedTime.setHours(parseInt(hours, 10));
+                formattedTime.setMinutes(parseInt(minutes, 10));
                 this.setDataValue('arrtime', formattedTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }));
             }
         },
     },
+    
     routeid: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -37,14 +41,6 @@ const Buses = sequelize.define('Buses', {
 }, {
     timestamps: false, // Disable createdAt and updatedAt
 });
-
-/*Buses.create({
-    regno: "KA21EZ101",
-    bname:"Vishal",
-    type: "Express",
-    arrtime: "13:15",
-    routeid: 1
-})*/
 
 Buses.belongsTo(Routes, { foreignKey: 'routeid' });
 Buses.sync();
