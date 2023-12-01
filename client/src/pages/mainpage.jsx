@@ -15,24 +15,37 @@ const openinfowindow = () =>{
 const closeinfowindow = () =>{
   setshowinfowindow(false);
 }
-  return (
-    <div className='bg-light-purple w-full min-h-screen'>
+const [selectedDestinations, setSelectedDestinations] = useState([]);
+const [selectedtypes, setselectedtypes] = useState([]);
+const handleDestinationChange = (destinations) => {
+  setSelectedDestinations(destinations);
+};
+const handletypeChange = (types) => {
+  setselectedtypes(types);
+};
+const [searchValue, setSearchValue] = useState('');
+const handleSearch = (value) => {
+  setSearchValue(value);
+};
+return (
+  <div className='bg-light-purple w-full min-h-screen'>
     <Nav />
-    <Searchbar />
-      <div className='flex flex-row w-full pb-6 '>
-        <div className='flex flex-col flex-wrap w-1/5 justify-start pl-2 '>    
-            <Filterbox />
-            <Disclaimer />
-        </div>
-        <MainContent openinfowindow={openinfowindow} />
+    <Searchbar onSearch={handleSearch} />
+    <div className='flex flex-row w-full pb-6 '>
+      <div className='flex flex-col flex-wrap w-1/5 justify-start pl-2 '>
+        <Filterbox onDestinationChange={handleDestinationChange} ontypeChange={handletypeChange}/>
+        <Disclaimer />
       </div>
+      <MainContent openinfowindow={openinfowindow} selectedDestinations={selectedDestinations} selectedtypes={selectedtypes} searchValue={searchValue} />
+    </div>
     <Footer />
     {showinfowindow && (
-        <div className="fixed inset-0 flex items-center justify-center">
-          <Infowindow onClick={closeinfowindow} />
-        </div>
-      )}
-    </div>
-  )
+      <div className="fixed inset-0 flex items-center justify-center">
+        <Infowindow onClick={closeinfowindow} />
+      </div>
+    )}
+  </div>
+);
 }
+
 export default Mainpage

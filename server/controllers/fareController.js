@@ -9,8 +9,7 @@ const getAllFares = async () => {
       console.error('Error retrieving fares:', error);
       throw error;
     }
-  };
-  
+  }; 
   const addfares = async (req, res) => {
     const { fareid, routeid, cfare, fare } = req.body;
   
@@ -19,7 +18,6 @@ const getAllFares = async () => {
       if (existingFare) {
         return res.status(400).json({ status: 'Failure', message: 'Ticket Fare information already exists' });
       }
-      // Create a new Route
       const newFare = await Fares.create({
         fareid,
         routeid,
@@ -31,7 +29,6 @@ const getAllFares = async () => {
       return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
     }
   };
-
   const removeFares = async (req, res) => {
     const { fareid } = req.params; 
     try {
@@ -45,8 +42,5 @@ const getAllFares = async () => {
       return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
     }
   };
-
-
-
   module.exports = { getAllFares, addfares,removeFares};
   
