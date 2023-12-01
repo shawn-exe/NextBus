@@ -12,7 +12,6 @@ const getAllBuses = async () => {
     throw error;
   }
 };
-
 const addbuses = async (req, res) => {
   const { regno, bname, type, arrtime, routeid } = req.body;
   try {
@@ -20,7 +19,6 @@ const addbuses = async (req, res) => {
     if (existingBus) {
       return res.status(400).json({ status: 'Failure', message: 'Bus already exists' });
     }
-    // Create a new Route
     const newBus = await Buses.create({
       regno,
       bname,
@@ -35,7 +33,7 @@ const addbuses = async (req, res) => {
 };
 
 const removeBus = async (req, res) => {
-  const { regno,arrtime } = req.params; // Use req.params to get the registration number
+  const { regno,arrtime } = req.params; 
   try {
     const existingBus = await Buses.findOne({ where: { regno,arrtime } });
     if (!existingBus) {
@@ -47,7 +45,4 @@ const removeBus = async (req, res) => {
     return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
   }
 };
-
-
-
 module.exports = { getAllBuses,addbuses,removeBus };

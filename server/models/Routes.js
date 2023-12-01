@@ -5,6 +5,7 @@ const Routes =sequelize.define('Routes',{
     routeid:{
         type:DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true, 
     },
     source: {
         type: DataTypes.STRING,

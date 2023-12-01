@@ -18,7 +18,6 @@ function Buscontent() {
         console.error('Error deleting bus:', error);
       }
     };
-    
     return (
       <div className='w-ful pt-6 hide-scrollbar overflow-y-auto'>
         <Headings className="sticky" />

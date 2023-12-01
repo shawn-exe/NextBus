@@ -4,9 +4,10 @@ import Bname from '../MainContents/Info/bname'
 import Btime from '../MainContents/Info/btime'
 import Btype from '../MainContents/Info/btype'
 import Bdestination from '../MainContents/Info/bdestination'
+
 function buses(props) {
   const handleDelete = () => {
-    props.onDelete(props.regno,props.arrtime); // Make sure props.regno is correct
+    props.onDelete(props.regno,props.arrtime);
   };  
   return (
     <div className='flex flex-row justify-evenly  text-center align-middle items-center mx-10 text-[0.8rem] border-b-2 border-solid border-grayb'>

@@ -32,7 +32,21 @@ const getAllFares = async () => {
     }
   };
 
+  const removeFares = async (req, res) => {
+    const { fareid } = req.params; 
+    try {
+      const existingFare = await Fares.findOne({ where: {fareid} });
+      if (!existingFare) {
+        return res.status(404).json({ status: 'Failure', message: 'Route not found' });
+      }
+      await Fares.destroy({ where: {fareid} });
+      return res.status(200).json({ status: 'Success', message: 'Route removed successfully' });
+    } catch (error) {
+      return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
+    }
+  };
 
 
-  module.exports = { getAllFares, addfares };
+
+  module.exports = { getAllFares, addfares,removeFares};
   

@@ -40,5 +40,4 @@ cfare:{
 
 Fares.belongsTo(Routes, { foreignKey: 'routeid' });
 Fares.sync();
-Routes.sync();
 module.exports = Fares;

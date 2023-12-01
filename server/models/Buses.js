@@ -29,16 +29,15 @@ const Buses = sequelize.define('Buses', {
             }
         },
     },
-    
     routeid: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: Routes,
             key: 'routeid',
-            onDelete: 'CASCADE', 
-            onUpdate: 'CASCADE',
+            onUpdate: 'CASCADE', 
         },
+        onDelete: 'CASCADE', 
     }
 }, {
     timestamps: false, // Disable createdAt and updatedAt

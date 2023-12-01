@@ -12,6 +12,16 @@ function FareContent() {
         .catch(error => console.error('Error fetching fares:', error));
     }, []);
   
+    const handleDelete = async (fareid) => {
+      try {
+        await axios.delete(`http://localhost:3001/removeFares/${fareid}`);
+        const updatedFares = fares.filter(fare => fare.fareid !== fareid);
+        setFares(updatedFares);
+      } catch (error) {
+        console.error('Error deleting Route:', error);
+      }
+    };
+
     return (
       <div className='w-ful pt-6 hide-scrollbar overflow-y-auto'>
         <Headings className="sticky" />
@@ -23,6 +33,7 @@ function FareContent() {
               routeid={fare.routeid}
               cfare={fare.cfare}
               fare={fare.fare}
+              onDelete={() => handleDelete(fare.fareid)}
             />    
           ))}
         </div>
