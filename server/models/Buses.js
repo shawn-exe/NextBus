@@ -36,6 +36,8 @@ const Buses = sequelize.define('Buses', {
         references: {
             model: Routes,
             key: 'routeid',
+            onDelete: 'CASCADE', 
+            onUpdate: 'CASCADE',
         },
     }
 }, {

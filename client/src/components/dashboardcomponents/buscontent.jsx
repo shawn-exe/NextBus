@@ -4,14 +4,21 @@ import Buses from './buses';
 import Headings from '../MainContents/headings'
 function Buscontent() {
     const [buses, setBuses] = useState([]);
-
-    useEffect(() => {
-      // Fetch data when the component mounts
+    useEffect(() => {    
       axios.get('http://localhost:3001/getAllBuses')
         .then(response => setBuses(response.data))
         .catch(error => console.error('Error fetching buses:', error));
     }, []);
-  
+    const handleDelete = async (regno, arrtime) => {
+      try {
+        await axios.delete(`http://localhost:3001/removeBus/${regno}/${arrtime}`);
+        const updatedBuses = buses.filter(bus => bus.regno !== regno || bus.arrtime !== arrtime);
+        setBuses(updatedBuses);
+      } catch (error) {
+        console.error('Error deleting bus:', error);
+      }
+    };
+    
     return (
       <div className='w-ful pt-6 hide-scrollbar overflow-y-auto'>
         <Headings className="sticky" />
@@ -23,6 +30,7 @@ function Buscontent() {
               btime={bus.arrtime}
               bdestination={bus.Route.destination}
               btype={bus.type}
+              onDelete={() => handleDelete(bus.regno,bus.arrtime)} 
             />    
           ))}
         </div>

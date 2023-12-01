@@ -33,4 +33,21 @@ const addbuses = async (req, res) => {
     return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
   }
 };
-module.exports = { getAllBuses,addbuses };
+
+const removeBus = async (req, res) => {
+  const { regno,arrtime } = req.params; // Use req.params to get the registration number
+  try {
+    const existingBus = await Buses.findOne({ where: { regno,arrtime } });
+    if (!existingBus) {
+      return res.status(404).json({ status: 'Failure', message: 'Bus not found' });
+    }
+    await Buses.destroy({ where: { regno , arrtime } });
+    return res.status(200).json({ status: 'Success', message: 'Bus removed successfully' });
+  } catch (error) {
+    return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
+  }
+};
+
+
+
+module.exports = { getAllBuses,addbuses,removeBus };

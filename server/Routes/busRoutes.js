@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { getAllBuses,addbuses} = require('../controllers/busController');
+const { getAllBuses,addbuses,removeBus} = require('../controllers/busController');
 
-router.post('/addbuses',addbuses)
+router.post('/addbuses',addbuses);
+// Add a route parameter to capture the registration number
+router.delete('/removeBus/:regno/:arrtime', removeBus);
 router.get('/getAllBuses', async (req, res) => {
   try {
     const buses = await getAllBuses();
