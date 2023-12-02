@@ -9,13 +9,14 @@ import axios from 'axios'
 import MainContent from '../components/MainContents/mainContent'
 function Mainpage() {
 const[showinfowindow,setshowinfowindow]=useState(false);
-const [selectedBus, setSelectedBus] = useState(null);
+
+const [selectedRegno, setSelectedRegno] = useState("");
+const [selectedarrtime, setSelectedarrtime] = useState("");
 
 const openinfowindow = async () => {
-  
-
     setshowinfowindow(true);
-  
+    console.log(selectedRegno)
+    console.log(selectedarrtime)
 };
 
 const closeinfowindow = () =>{
@@ -42,7 +43,7 @@ return (
         <Filterbox onDestinationChange={handleDestinationChange} ontypeChange={handletypeChange}/>
         <Disclaimer />
       </div>
-      <MainContent openinfowindow={openinfowindow} selectedDestinations={selectedDestinations} selectedtypes={selectedtypes} searchValue={searchValue} />
+      <MainContent openinfowindow={openinfowindow} selectedRegno={setSelectedRegno} selectedarrtime={setSelectedarrtime} selectedDestinations={selectedDestinations} selectedtypes={selectedtypes} searchValue={searchValue} />
     </div>
     <Footer />
     {showinfowindow && (

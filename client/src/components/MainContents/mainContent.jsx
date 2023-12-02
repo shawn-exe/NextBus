@@ -3,7 +3,7 @@ import Headings from './headings';
 import Binfo from './binfo';
 import axios from 'axios';
 
-function MainContent({ openinfowindow, selectedDestinations, selectedtypes,searchValue}) {
+function MainContent({ openinfowindow, selectedRegno, selectedarrtime, selectedDestinations, selectedtypes,searchValue}) {
   const [buses, setBuses] = useState([]);
 
   useEffect(() => {
@@ -22,12 +22,14 @@ function MainContent({ openinfowindow, selectedDestinations, selectedtypes,searc
         {filteredBuses.map(bus => (
           <Binfo
             key={bus.regno}
+            breg={bus.regno}
             bname={bus.bname}
             btime={bus.arrtime}
             bdestination={bus.Route.destination}
             btype={bus.type}
             openinfowindow={openinfowindow}
-            bus={bus} 
+            selectedRegno={selectedRegno} 
+            selectedarrtime={selectedarrtime}
           />
         ))}
       </div>

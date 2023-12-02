@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Viewbtn({ openinfowindow }) {
+function Viewbtn({ openinfowindow ,selectedarrtime, selectedRegno, breg ,btime}) {
   const viewbtnclick = () => {
     openinfowindow();
+    selectedRegno(breg);
+    selectedarrtime(btime);
   };
 
   return (
