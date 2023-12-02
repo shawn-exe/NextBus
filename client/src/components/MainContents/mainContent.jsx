@@ -27,6 +27,7 @@ function MainContent({ openinfowindow, selectedDestinations, selectedtypes,searc
             bdestination={bus.Route.destination}
             btype={bus.type}
             openinfowindow={openinfowindow}
+            bus={bus} 
           />
         ))}
       </div>

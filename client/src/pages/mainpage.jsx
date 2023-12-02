@@ -5,13 +5,19 @@ import Footer from "../components/Footer/footer"
 import Filterbox from '../components/MainContents/filterbox'
 import Infowindow from '../components/MainContents/infowindow'
 import Disclaimer from '../components/MainContents/disclaimer'
+import axios from 'axios'
 import MainContent from '../components/MainContents/mainContent'
 function Mainpage() {
 const[showinfowindow,setshowinfowindow]=useState(false);
+const [selectedBus, setSelectedBus] = useState(null);
 
-const openinfowindow = () =>{
-  setshowinfowindow(true);
-}
+const openinfowindow = async () => {
+  
+
+    setshowinfowindow(true);
+  
+};
+
 const closeinfowindow = () =>{
   setshowinfowindow(false);
 }

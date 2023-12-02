@@ -2,6 +2,7 @@ import React from 'react'
 import Cancel from '../../assets/cancel.svg'
 import Arrow from '../../assets/arrow.svg'
 function infowindow(props) {
+
   return (
     <div className='flex flex-row w-full h-screen justify-center items-center align-middle bg-semitrans'>
         <div className='w-full flex flex-row justify-center fixed gap-1'>'
@@ -16,7 +17,7 @@ function infowindow(props) {
                         Source
                     </div>
                     <div className='font-bold text-center w-full text-lg'>
-                        Karkala
+                    Karkala
                     </div>
                 </div>
                 
@@ -40,7 +41,7 @@ function infowindow(props) {
                         Destination
                     </div>
                     <div className='font-bold text-center w-full text-lg'>
-                        Mangalore
+                    Mangalore
                     </div>
                 </div>   
             </div>
