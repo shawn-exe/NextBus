@@ -28,8 +28,6 @@ const openinfowindow = async (breg,btime) => {
   }
  )
   .catch((err) =>{console.log(err)})
-  console.log(breg)
-  console.log(btime)
   setshowinfowindow(true)
 };
 

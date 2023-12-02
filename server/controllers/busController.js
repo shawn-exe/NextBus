@@ -13,6 +13,7 @@ const getAllBuses = async () => {
     throw error;
   }
 };
+
 const addbuses = async (req, res) => {
   const { regno, bname, type, arrtime, routeid } = req.body;
   try {
@@ -33,41 +34,15 @@ const addbuses = async (req, res) => {
   }
 };
 
-/*const getBusDetails = async (regno, arrtime) => {
-  try {
-    const bus = await Buses.findOne({
-      where: { regno, arrtime },
-      include: [
-        {
-          model: Routes,
-          attributes: ['source', 'destination', 'duration','stops'],
-          include: [
-            {
-              model: Fares,
-              attributes: ['fare','cfare'],
-            },
-          ],
-        },
-      ],
-    });
-    return bus;
-  } catch (error) {
-    console.error('Error retrieving bus details:', error);
-    throw error;
-  }
-};*/
-
 const getBusDetails = async (regno, arrtime) => {
   try {
     const bus = await Buses.findOne({where:{regno, arrtime}})
     const route = await Routes.findOne({where:{routeid:bus.dataValues.routeid}})
     const fare = await Fares.findOne({where:{routeid:bus.dataValues.routeid}})
-
     const busDetails = {
       bus, route, fare
     }
-    return busDetails
-      
+    return busDetails 
   } catch (error) {
     console.error('Error retrieving bus details:', error);
     throw error;
@@ -88,9 +63,5 @@ const removeBus = async (req, res) => {
     return res.status(500).json({ status: 'Failure', message: 'Internal server error' });
   }
 };
-
-
-
-
 
 module.exports = { getAllBuses,addbuses,removeBus,getBusDetails};

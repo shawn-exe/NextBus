@@ -12,7 +12,6 @@ router.get('/getAllBuses', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 router.get('/getBusDetails/:regno/:arrtime', async (req, res) => {
   const { regno, arrtime } = req.params;
   try {
