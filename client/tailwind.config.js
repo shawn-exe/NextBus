@@ -36,6 +36,7 @@ module.exports = {
         content: "Content",
         arimo: "Arimo",
         lato: "Lato",
+         ssp : "'Source Serif Pro'",
         "dm-sans": "'DM Sans'",
         content: "Content",
       },

@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Mainpage from './pages/mainpage';
 import AuthRoute from './context/AuthenticateRoute';
 import Admindashboard from './pages/admindashboard';
+import Aboutus from './pages/aboutus';
 import Btodashboard from './pages/btodashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/btodashboard" element={<AuthRoute />}>
           <Route index element={<Btodashboard />} />
         </Route>
+        <Route path="/aboutus" element={<Aboutus />} />
       </Routes>
     </BrowserRouter>
   );
