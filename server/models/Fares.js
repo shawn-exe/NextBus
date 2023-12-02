@@ -24,20 +24,7 @@ cfare:{
 }
 });
 
-/*Fares.create({
-    fareid: 1,
-    routeid: 1,
-    fare: 150,
-    cfare: 79,
-})
-    .then((fare) => { 
-        console.log('fare created');
-
-    })
-    .catch((error) => {
-        console.error('Error creating fare:', error);
-    });*/
-
 Fares.belongsTo(Routes, { foreignKey: 'routeid' });
 Fares.sync();
+Routes.sync();
 module.exports = Fares;

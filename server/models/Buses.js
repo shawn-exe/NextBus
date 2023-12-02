@@ -1,6 +1,7 @@
 const sequelize = require("../db");
 const DataTypes = require("sequelize");
 const Routes = require('./Routes');
+const Fares =require('./Fares')
 
 const Buses = sequelize.define('Buses', {
     regno: {

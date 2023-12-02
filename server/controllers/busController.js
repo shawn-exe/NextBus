@@ -1,5 +1,6 @@
 const Buses = require('../models/Buses');
 const Routes =require('../models/Routes');
+const Fares =require('../models/Fares');
 const getAllBuses = async () => {
   try {
     const buses = await Buses.findAll({
@@ -32,7 +33,7 @@ const addbuses = async (req, res) => {
   }
 };
 
-const getBusDetails = async (regno, arrtime) => {
+/*const getBusDetails = async (regno, arrtime) => {
   try {
     const bus = await Buses.findOne({
       where: { regno, arrtime },
@@ -54,8 +55,24 @@ const getBusDetails = async (regno, arrtime) => {
     console.error('Error retrieving bus details:', error);
     throw error;
   }
-};
+};*/
 
+const getBusDetails = async (regno, arrtime) => {
+  try {
+    const bus = await Buses.findOne({where:{regno, arrtime}})
+    const route = await Routes.findOne({where:{routeid:bus.dataValues.routeid}})
+    const fare = await Fares.findOne({where:{routeid:bus.dataValues.routeid}})
+
+    const busDetails = {
+      bus, route, fare
+    }
+    return busDetails
+      
+  } catch (error) {
+    console.error('Error retrieving bus details:', error);
+    throw error;
+  }
+};
 
 
 const removeBus = async (req, res) => {

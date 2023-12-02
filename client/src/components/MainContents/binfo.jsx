@@ -12,7 +12,7 @@ function Binfo(props) {
       <Btime btime={props.btime} />
       <Bdestination bdestination={props.bdestination} />
       <Btype btype={props.btype} />
-      <Viewbtn openinfowindow={props.openinfowindow} selectedarrtime={props.selectedarrtime} selectedRegno={props.selectedRegno} breg={props.breg} btime={props.btime}/>
+      <Viewbtn openinfowindow={props.openinfowindow}  breg={props.breg} btime={props.btime}/>
     </div>
   );
 }

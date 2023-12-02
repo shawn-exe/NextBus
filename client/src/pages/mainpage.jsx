@@ -10,19 +10,27 @@ import MainContent from '../components/MainContents/mainContent'
 function Mainpage() {
 const[showinfowindow,setshowinfowindow]=useState(false);
 
-const [selectedRegno, setSelectedRegno] = useState("");
-const [selectedarrtime, setSelectedarrtime] = useState("");
+const[busDetails,setbusDetails]=useState({});
 
-const openinfowindow = async () => {
-  await axios.get(`http://localhost:3001/removeRoute/${selectedRegno}/${selectedarrtime}`)
-  .then((res) =>{ const {source,destination,duration,stops,fare,cfare}=response.data)
-}
-;
-
-  
-  console.log(selectedRegno)
-  console.log(selectedarrtime)
-    setshowinfowindow(true);
+const openinfowindow = async (breg,btime) => {
+  await axios.get(`http://localhost:3001/getBusDetails/${breg}/${btime}`)
+  .then((res) =>{
+      const {bus,route,fare}=res.data;
+      setbusDetails({
+        source : route?.source,
+        destination :route?.destination,
+        duration :route?.duration,
+        stops: route?.stops,
+        fare :fare?.fare,
+        cfare :fare?.cfare,
+        regno :bus?.regno,  
+      })
+  }
+ )
+  .catch((err) =>{console.log(err)})
+  console.log(breg)
+  console.log(btime)
+  setshowinfowindow(true)
 };
 
 const closeinfowindow = () =>{
@@ -49,12 +57,12 @@ return (
         <Filterbox onDestinationChange={handleDestinationChange} ontypeChange={handletypeChange}/>
         <Disclaimer />
       </div>
-      <MainContent openinfowindow={openinfowindow} selectedRegno={setSelectedRegno} selectedarrtime={setSelectedarrtime} selectedDestinations={selectedDestinations} selectedtypes={selectedtypes} searchValue={searchValue} />
+      <MainContent openinfowindow={openinfowindow}  selectedDestinations={selectedDestinations} selectedtypes={selectedtypes} searchValue={searchValue} />
     </div>
     <Footer />
     {showinfowindow && (
       <div className="fixed inset-0 flex items-center justify-center">
-        <Infowindow onClick={closeinfowindow} />
+        <Infowindow onClick={closeinfowindow} busDetails={busDetails} />
       </div>
     )}
   </div>

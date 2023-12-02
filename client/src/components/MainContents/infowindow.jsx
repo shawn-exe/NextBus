@@ -17,14 +17,14 @@ function infowindow(props) {
                         Source
                     </div>
                     <div className='font-bold text-center w-full text-lg'>
-                    Karkala
+                    {props.busDetails.source}
                     </div>
                 </div>
                 
                 <div className='flex flex-col justify-center'>
                     <div className='flex flex-row justify-center gap-2'>
                         <div className='text-blue font-bold'>
-                            12
+                        {props.busDetails.stops}
                         </div>
                         <div>
                             Stops
@@ -32,7 +32,7 @@ function infowindow(props) {
                     </div>
                    <img src={Arrow} alt="" />
                     <div className='text-center text-sm'>
-                     1 hr 25 minutes   
+                    {props.busDetails.duration}
                     </div> 
                 </div>
 
@@ -41,7 +41,7 @@ function infowindow(props) {
                         Destination
                     </div>
                     <div className='font-bold text-center w-full text-lg'>
-                    Mangalore
+                    {props.busDetails.destination}
                     </div>
                 </div>   
             </div>
@@ -53,7 +53,7 @@ function infowindow(props) {
                             FARE(C)
                          </div>
                          <div className='text-center font-bold text-lg'>
-                            78
+                         {props.busDetails.cfare}
                          </div>
                     </div>
                     <div className='w-1/3 text-center flex flex-col items-center'>
@@ -61,7 +61,7 @@ function infowindow(props) {
                             FARE
                          </div>
                          <div className=' text-center font-bold text-lg'>
-                            150
+                         {props.busDetails.fare}
                          </div>
                     </div>
                 </div>
