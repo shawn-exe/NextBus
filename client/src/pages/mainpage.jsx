@@ -14,9 +14,15 @@ const [selectedRegno, setSelectedRegno] = useState("");
 const [selectedarrtime, setSelectedarrtime] = useState("");
 
 const openinfowindow = async () => {
+  await axios.get(`http://localhost:3001/removeRoute/${selectedRegno}/${selectedarrtime}`)
+  .then((res) =>{ const {source,destination,duration,stops,fare,cfare}=response.data)
+}
+;
+
+  
+  console.log(selectedRegno)
+  console.log(selectedarrtime)
     setshowinfowindow(true);
-    console.log(selectedRegno)
-    console.log(selectedarrtime)
 };
 
 const closeinfowindow = () =>{
