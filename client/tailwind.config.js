@@ -22,6 +22,7 @@ module.exports = {
         tomato: "#ff4343",
         textpurple: "rgba(138, 79, 255, 1)",
         blue: "#1400ff",
+        text2: "#8a4fff",
       },
       spacing: {},
       fontFamily: {

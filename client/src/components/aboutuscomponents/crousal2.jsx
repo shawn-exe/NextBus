@@ -3,7 +3,7 @@ import Underline from '../../assets/unl.svg'
 import Pfp3 from '../../assets/pfp3.svg'
 function crousal2() {
   return (
-    <div className='flex flex-col w-full justify-center items-center my-6 '>
+    <div className='flex flex-col w-full justify-center items-center mt-6 mb-8 '>
         <div className='w-2/3 py-10 rounded-[2rem] bg-blueviolet flex flex-col  justify-center items-center '>
         <div className='flex flex-col text-center text-black font-ssp items-center w-1/2 '>
             <div className='font-semibold text-center text-[2rem]'>
