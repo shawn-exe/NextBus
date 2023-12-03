@@ -41,7 +41,8 @@ const Buses = sequelize.define('Buses', {
         onDelete: 'CASCADE', 
     }
 }, {
-    timestamps: false, // Disable createdAt and updatedAt
+    timestamps: false, 
+    primaryKey: ['regno', 'arrtime'], // Define a composite primary key
 });
 
 Buses.belongsTo(Routes, { foreignKey: 'routeid' });

@@ -27,26 +27,8 @@ function infowindow(props) {
 
             {(((props.busDetails.source === "Mangalore") && (props.busDetails.destination === "Karkala")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
 
-            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Padubidri")))  && (<img src={r3} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Padubidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r4} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Karkala")))  && (<img src={r5} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Nitte")))  && (<img src={r6} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Udupi")))  && (<img src={r8} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Udupi") && (props.busDetails.destination === "Nitte")))  && (<img src={r7} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-            
-            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Moodbidri")))  && (<img src={r9} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Moodbidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r10} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Moodbidri")))  && (<img src={r11} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-
-            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Mulki")))  && (<img src={r12} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-    
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Padubidri")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+           
 
             </div>   
             <div className='w-full flex flex-row justify-center items-center gap-2 text-center text-sm pt-2'>

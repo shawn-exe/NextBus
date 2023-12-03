@@ -30,7 +30,7 @@ function Filterbox({ onDestinationChange,ontypeChange }) {
         </div>
         <div className='flex flex-col gap-2 pl-2 pb-3'>
         < Checkbox label="Express" onChange={() => handletypeChange("Express")}/>
-        < Checkbox label="Local"  onChange={() => handletypeChange("local")} />
+        < Checkbox label="Local"  onChange={() => handletypeChange("Local")} />
         < Checkbox label="Fast-Service"  onChange={() => handletypeChange("Fast-service")} />
         </div>
 
@@ -40,7 +40,7 @@ function Filterbox({ onDestinationChange,ontypeChange }) {
       <div className='flex flex-col gap-2 pl-2'>
         <Checkbox
           label="Mangalore"
-          onChange={() => handleDestinationChange("mangalore")}
+          onChange={() => handleDestinationChange("Mangalore")}
         />
         <Checkbox
           label="Karkala"
@@ -48,7 +48,7 @@ function Filterbox({ onDestinationChange,ontypeChange }) {
         />
         <Checkbox
           label="Udupi"
-          onChange={() => handleDestinationChange("udupi")}
+          onChange={() => handleDestinationChange("Udupi")}
         />
       </div>
     </div>
