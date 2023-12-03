@@ -1,7 +1,20 @@
 import React from 'react'
 import Cancel from '../../assets/cancel.svg'
 import Arrow from '../../assets/arrow.svg'
-import r1 from '../../assets/route1.png'
+import r1 from '../../assets/maps/r1.png'
+import r2 from '../../assets/maps/r2.png'
+import r3 from '../../assets/maps/r3.png'
+import r4 from '../../assets/maps/r4.png'
+import r5 from '../../assets/maps/r5.png'
+import r6 from '../../assets/maps/r6.png'
+import r7 from '../../assets/maps/r7.png'
+import r8 from '../../assets/maps/r8.png'
+import r9 from '../../assets/maps/r9.png'
+import r10 from '../../assets/maps/r10.png'
+import r11 from '../../assets/maps/r11.png'
+import r12 from '../../assets/maps/r12.png'
+
+
 function infowindow(props) {
 
   return (
@@ -9,7 +22,32 @@ function infowindow(props) {
         <div className='w-full flex flex-row justify-center fixed gap-1'>'
          <div className='rounded-[4rem] w-[30rem] h-[34rem] shadow-2xl  bg-white flex flex-col p-5 '>
             <div className=' w-full h-4/6 rounded-t-[2.5rem] flex justify-center items-center'>
-            <img src={r1} className='rounded-t-[2.5rem] w-full h-full' alt="" />
+            
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Mangalore")))  && (<img src={r1} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Mangalore") && (props.busDetails.destination === "Karkala")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Padubidri")))  && (<img src={r3} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Padubidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r4} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Karkala")))  && (<img src={r5} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Nitte")))  && (<img src={r6} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Udupi")))  && (<img src={r8} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Udupi") && (props.busDetails.destination === "Nitte")))  && (<img src={r7} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+            
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Moodbidri")))  && (<img src={r9} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Moodbidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r10} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Moodbidri")))  && (<img src={r11} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Mulki")))  && (<img src={r12} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+    
+
             </div>   
             <div className='w-full flex flex-row justify-center items-center gap-2 text-center text-sm pt-2'>
            <div>Register Number: </div> <div className='font-bold'>{props.busDetails.regno}</div>
