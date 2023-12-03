@@ -22,12 +22,35 @@ function infowindow(props) {
         <div className='w-full flex flex-row justify-center fixed gap-1'>'
          <div className='rounded-[4rem] w-[30rem] h-[34rem] shadow-2xl  bg-white flex flex-col p-5 '>
             <div className=' w-full h-4/6 rounded-t-[2.5rem] flex justify-center items-center'>
-            
+            {console.log(props.busDetails.source, props.busDetails.destination)}
+
             {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Mangalore")))  && (<img src={r1} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
 
-            {(((props.busDetails.source === "Mangalore") && (props.busDetails.destination === "Karkala")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+            {(((props.busDetails.source === "Mangalore ") && (props.busDetails.destination === "Karkala")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
 
-            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Padubidri")))  && (<img src={r2} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Padubidri")))  && (<img src={r3} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Padubidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r4} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Karkala")))  && (<img src={r6} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Nitte")))  && (<img src={r5} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Belman")))  && (<img src={r7} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Udupi")))  && (<img src={r8} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+                        
+            {(((props.busDetails.source === "Udupi") && (props.busDetails.destination === "Nitte")))  && (<img src={r9} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+
+            {(((props.busDetails.source === "Karkala") && (props.busDetails.destination === "Moodbidri")))  && (<img src={r10} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+            
+            {(((props.busDetails.source === "Moodbidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r11} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+                 
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Mulki")))  && (<img src={r12} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
+           
+           
            
 
             </div>   
