@@ -4,7 +4,6 @@ import FareID from './Finfo/fareID'
 import Cfare from './Finfo/cfare'
 import Fare from './Finfo/fare'
 import Routeno from './Finfo/routeno'
-
 function routes(props) {
   const handleDelete = () => {
     props.onDelete(props.fareid); 
@@ -19,5 +18,4 @@ function routes(props) {
     </div>
   )
 }
-
 export default routes

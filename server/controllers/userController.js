@@ -50,10 +50,9 @@ const registeruser = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ status: 'Failure', message: 'Username already exists' });
     }
-    // Create a new user
     const newUser = await User.create({
       username,
-      password, // This should be automatically hashed if sequelize-bcrypt is properly configured
+      password,
       roleId: 1,
     });
     return res.status(201).json({ status: 'Success', message: 'User registered successfully'});

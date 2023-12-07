@@ -4,9 +4,7 @@ import Fares from './fares'
 import Headings from './fheadings'
 function FareContent() {
     const [fares, setFares] = useState([]);
-
     useEffect(() => {
-      // Fetch data when the component mounts
       axios.get('http://localhost:3001/getAllFares')
         .then(response => setFares(response.data))
         .catch(error => console.error('Error fetching fares:', error));
@@ -40,5 +38,4 @@ function FareContent() {
       </div>
     );
 }
-
 export default FareContent

@@ -42,7 +42,7 @@ const Buses = sequelize.define('Buses', {
     }
 }, {
     timestamps: false, 
-    primaryKey: ['regno', 'arrtime'], // Define a composite primary key
+    primaryKey: ['regno', 'arrtime'],
 });
 
 Buses.belongsTo(Routes, { foreignKey: 'routeid' });

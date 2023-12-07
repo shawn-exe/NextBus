@@ -23,7 +23,7 @@ function Home() {
 
   const handleSignupClick = () => {
     setshowSignup(true);
-    setShowLogin(false); // Make sure to hide Logincomponent when showing Signupcomponent
+    setShowLogin(false); 
   };
   console.log("status:",authenticated);
   return (

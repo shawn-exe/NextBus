@@ -19,9 +19,7 @@ function hometext() {
         <b className="text-blueviolet-100">
         <span className="text-[1.81rem] text-black"> and </span>
             <span className="text-textpurple font-extrabold">
-             Up-to-Date Bus timings </span>
-        
-         
+             Up-to-Date Bus timings </span>   
           <span className="text-[1.61rem] text-black">
             at your fingertips!!
           </span>

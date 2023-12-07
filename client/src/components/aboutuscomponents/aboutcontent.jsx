@@ -1,5 +1,4 @@
 import React from 'react'
-
 function aboutcontent(props) {
   return (
     <div className='w-1/3 flex flex-col justify-center items-center'>

@@ -48,10 +48,7 @@ function infowindow(props) {
             
             {(((props.busDetails.source === "Moodbidri") && (props.busDetails.destination === "Karkala")))  && (<img src={r11} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
                  
-            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Mulki")))  && (<img src={r12} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}
-           
-           
-           
+            {(((props.busDetails.source === "Nitte") && (props.busDetails.destination === "Mulki")))  && (<img src={r12} className='rounded-t-[2.5rem] w-full h-full' alt="" />)}        
 
             </div>   
             <div className='w-full flex flex-row justify-center items-center gap-2 text-center text-sm pt-2'>
