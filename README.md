@@ -1,3 +1,4 @@
+# *NextBus*
 **NextBus - DBMS Mini Project**
 Overview:
 NextBus is a Database Management System (DBMS) mini project developed to address the need for a reliable and accurate bus scheduling system for NMAM Institute of Technology students. The project aims to provide real-time bus timings, streamline commuting, and enhance the overall transportation experience for the student community.
